@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+	int i = 1, s = 0, z = i - s;
+	printf("请输入所有同学的成绩：");
+	float m;
+	scanf_s("%f", &m);
+	while (m <= 100 && m >= 0)
+	{
+		{if (m >= 90)
+			printf("NO%2d您的成绩：%.1f  考核等级 A、\n", i, m);
+		else if (m >= 80)
+			printf("NO%2d您的成绩：%.1f  考核等级 B、\n", i, m);
+		else if (m >= 60)
+			printf("NO%2d您的成绩：%.1f  考核等级 C、\n", i, m);
+		else
+			printf("NO%2d您的成绩：%.1f  考核等级 D、\n", i, m);
+
+		}
+		if (m >= 60)
+			s = s + 1;
+		++i, scanf_s("%f", &m);
+	}
+	printf("合格人数%d,不合格人数%d", s, z);
+	return 0;
+}
